@@ -1,0 +1,149 @@
+{
+  "version": "6.0",
+  "nxVersion": "18.3.5",
+  "deps": {
+    "@supabase/supabase-js": "^2.39.0",
+    "firebase": "^10.7.0",
+    "framer-motion": "^10.16.0",
+    "lucide-react": "^0.300.0",
+    "next": "^14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.2.0",
+    "zustand": "^4.4.0",
+    "@nx/eslint": "^18.0.0",
+    "@nx/js": "^18.0.0",
+    "@nx/next": "^18.0.0",
+    "@nx/react": "^18.0.0",
+    "@nx/vite": "^18.0.0",
+    "@nx/workspace": "^18.0.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^14.0.0",
+    "nx": "^18.0.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0"
+  },
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {},
+    "nonProjectFiles": [
+      {
+        "file": "README.md",
+        "hash": "29133770109189972"
+      },
+      {
+        "file": "apps/ai-chatbot/README.md",
+        "hash": "527818521954476959"
+      },
+      {
+        "file": "apps/ai-finance/README.md",
+        "hash": "6247803118707278817"
+      },
+      {
+        "file": "apps/blog-cms/README.md",
+        "hash": "9989538451088649619"
+      },
+      {
+        "file": "apps/ceotr-control/README.md",
+        "hash": "12697602219088198489"
+      },
+      {
+        "file": "apps/core-shell/README.md",
+        "hash": "6862981889648943100"
+      },
+      {
+        "file": "apps/crypto-trader/README.md",
+        "hash": "13547150654486563853"
+      },
+      {
+        "file": "apps/emmdra-commerce/README.md",
+        "hash": "14710289950785963067"
+      },
+      {
+        "file": "apps/event-tool/README.md",
+        "hash": "3582791439176975688"
+      },
+      {
+        "file": "apps/farm-simulation/README.md",
+        "hash": "7644323865367779876"
+      },
+      {
+        "file": "apps/fintech-wallet/README.md",
+        "hash": "11821220363785138928"
+      },
+      {
+        "file": "apps/ml-impact/README.md",
+        "hash": "8243350860120688451"
+      },
+      {
+        "file": "apps/portfolio/README.md",
+        "hash": "18355258250457530758"
+      },
+      {
+        "file": "apps/poshpoule-farms/README.md",
+        "hash": "18000281065029511271"
+      },
+      {
+        "file": "apps/strategic-app/README.md",
+        "hash": "16281093576745813092"
+      },
+      {
+        "file": "apps/task-manager/README.md",
+        "hash": "5415168393734385903"
+      },
+      {
+        "file": "apps/weather-app/README.md",
+        "hash": "13682906677520266598"
+      },
+      {
+        "file": "apps/worship-app/README.md",
+        "hash": "104880671901887630"
+      },
+      {
+        "file": "apps/zereth-giveaway/README.md",
+        "hash": "5302393859350458538"
+      },
+      {
+        "file": "libs/api-client/README.md",
+        "hash": "796614333245399668"
+      },
+      {
+        "file": "libs/auth/README.md",
+        "hash": "13761140898856775515"
+      },
+      {
+        "file": "libs/database/README.md",
+        "hash": "10117940306239926727"
+      },
+      {
+        "file": "libs/ui-components/README.md",
+        "hash": "11327484304458789345"
+      },
+      {
+        "file": "libs/utils/README.md",
+        "hash": "9451456209789739038"
+      },
+      {
+        "file": "nx.json",
+        "hash": "6901255649221130882"
+      },
+      {
+        "file": "package.json",
+        "hash": "16999358869301965538"
+      },
+      {
+        "file": "tailwind.config.js",
+        "hash": "16144548733304598871"
+      }
+    ]
+  }
+}

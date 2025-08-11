@@ -1,0 +1,91 @@
+{
+  "name": "emmanuelOS",
+  "version": "1.0.0",
+  "description": "Personal Digital Operating System - A modular ecosystem of 18 interconnected applications",
+  "author": "Emmanuel Ogugua <emmachuka@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
+  "scripts": {
+    "dev": "nx run-many --target=dev --all",
+    "build": "nx run-many --target=build --all",
+    "test": "nx run-many --target=test --all",
+    "lint": "nx run-many --target=lint --all",
+    "serve": "nx serve",
+    "start:task-manager": "nx serve task-manager",
+    "start:weather-app": "nx serve weather-app",
+    "start:ai-chatbot": "nx serve ai-chatbot",
+    "start:portfolio": "nx serve portfolio",
+    "start:blog-cms": "nx serve blog-cms",
+    "start:ceotr-control": "nx serve ceotr-control",
+    "start:poshpoule-farms": "nx serve poshpoule-farms",
+    "start:farm-simulation": "nx serve farm-simulation",
+    "start:event-tool": "nx serve event-tool",
+    "start:worship-app": "nx serve worship-app",
+    "start:zereth-giveaway": "nx serve zereth-giveaway",
+    "start:emmdra-commerce": "nx serve emmdra-commerce",
+    "start:crypto-trader": "nx serve crypto-trader",
+    "start:fintech-wallet": "nx serve fintech-wallet",
+    "start:ai-finance": "nx serve ai-finance",
+    "start:ml-impact": "nx serve ml-impact",
+    "start:strategic-app": "nx serve strategic-app",
+    "start:core-shell": "nx serve core-shell",
+    "deploy": "nx run-many --target=deploy --all",
+    "clean": "nx reset"
+  },
+  "devDependencies": {
+    "@nx/eslint": "^18.0.0",
+    "@nx/js": "^18.0.0",
+    "@nx/next": "^18.0.0",
+    "@nx/react": "^18.0.0",
+    "@nx/vite": "^18.0.0",
+    "@nx/workspace": "^18.0.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^14.0.0",
+    "nx": "^18.0.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "firebase": "^10.7.0",
+    "framer-motion": "^10.16.0",
+    "lucide-react": "^0.300.0",
+    "next": "^14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.2.0",
+    "zustand": "^4.4.0"
+  },
+  "keywords": [
+    "emmanuelOS",
+    "personal-os",
+    "monorepo",
+    "react",
+    "nextjs",
+    "typescript",
+    "tailwind",
+    "entrepreneur",
+    "productivity",
+    "african-market"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emmachuka/EmmanuelOS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/emmachuka/EmmanuelOS/issues"
+  },
+  "homepage": "https://github.com/emmachuka/EmmanuelOS#readme"
+}

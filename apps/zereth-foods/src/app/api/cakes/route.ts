@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { supabaseServer } from '@/lib/supabaseServer'
+import { demoCakes } from '@/lib/demoCakes'
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url)
@@ -16,6 +17,13 @@ export async function GET(req: Request) {
   }
 
   const { data, error } = await query
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 })
+  if (error) {
+    const filtered = category ? demoCakes.filter(c=>c.category===category) : demoCakes
+    return NextResponse.json({ data: filtered })
+  }
+  if (!data || data.length === 0) {
+    const filtered = category ? demoCakes.filter(c=>c.category===category) : demoCakes
+    return NextResponse.json({ data: filtered })
+  }
   return NextResponse.json({ data })
 }

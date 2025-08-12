@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { supabaseServer } from '@/lib/supabaseServer'
+import { demoCakes } from '@/lib/demoCakes'
 
 export async function GET(_: Request, { params }: { params: { slug: string } }) {
   const { slug } = params
@@ -10,6 +11,10 @@ export async function GET(_: Request, { params }: { params: { slug: string } }) 
     .eq('slug', slug)
     .single()
 
-  if (error) return NextResponse.json({ error: error.message }, { status: 404 })
+  if (error || !data) {
+    const fallback = demoCakes.find(c=>c.slug===slug)
+    if (!fallback) return NextResponse.json({ error: 'Not found' }, { status: 404 })
+    return NextResponse.json({ data: fallback })
+  }
   return NextResponse.json({ data })
 }

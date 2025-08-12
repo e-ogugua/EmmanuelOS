@@ -1,4 +1,4 @@
-import { supabaseServer } from '@/lib/supabase/server'
+import { getSupabaseServer } from '@/lib/supabase/server'
 import { Post } from '@/lib/supabase/types'
 import { formatDate } from '@/lib/utils'
 import { generateBlogMetadata } from '@/lib/seo'
@@ -8,7 +8,8 @@ import type { Metadata } from 'next'
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
-  const { data: post } = await supabaseServer
+  const supabase = getSupabaseServer()
+  const { data: post } = await supabase
     .from('posts')
     .select('*')
     .eq('slug', resolvedParams.slug)
@@ -25,7 +26,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
-  const { data: post, error } = await supabaseServer
+  const supabase = getSupabaseServer()
+  const { data: post, error } = await supabase
     .from('posts')
     .select(`
       *,
@@ -40,7 +42,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   }
 
   // Increment view count
-  await supabaseServer
+  await supabase
     .from('views')
     .upsert({ post_id: post.id, view_count: 1 }, { onConflict: 'post_id' })
     .select()

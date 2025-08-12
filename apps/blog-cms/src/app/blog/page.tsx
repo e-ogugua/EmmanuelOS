@@ -1,4 +1,4 @@
-import { supabaseServer } from '@/lib/supabase/server'
+import { getSupabaseServer } from '@/lib/supabase/server'
 import { Post } from '@/lib/supabase/types'
 import { formatDate, getExcerpt } from '@/lib/utils'
 import { generateBlogMetadata } from '@/lib/seo'
@@ -16,7 +16,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function BlogPage() {
-  const { data: posts, error } = await supabaseServer
+  const supabase = getSupabaseServer()
+  const { data: posts, error } = await supabase
     .from('posts')
     .select('*')
     .eq('status', 'published')

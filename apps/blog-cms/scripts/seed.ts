@@ -1,5 +1,5 @@
 import dotenv from 'dotenv'
-import { supabaseServer } from '../src/lib/supabase/server'
+import { getSupabaseServer } from '../src/lib/supabase/server'
 import { slugify } from '../src/lib/utils'
 
 dotenv.config({ path: '.env.local' })
@@ -200,10 +200,11 @@ More content coming soon!
 
 async function seedDatabase() {
   console.log('Seeding database...')
+  const supabase = getSupabaseServer()
   
   // Insert authors
   console.log('Inserting authors...')
-  const { data: authorData, error: authorError } = await supabaseServer
+  const { data: authorData, error: authorError } = await supabase
     .from('authors')
     .upsert(authors, { onConflict: 'id' })
   
@@ -214,7 +215,7 @@ async function seedDatabase() {
   
   // Insert tags
   console.log('Inserting tags...')
-  const { data: tagData, error: tagError } = await supabaseServer
+  const { data: tagData, error: tagError } = await supabase
     .from('tags')
     .upsert(tags, { onConflict: 'id' })
   
@@ -225,7 +226,7 @@ async function seedDatabase() {
   
   // Insert posts
   console.log('Inserting posts...')
-  const { data: postData, error: postError } = await supabaseServer
+  const { data: postData, error: postError } = await supabase
     .from('posts')
     .upsert(posts, { onConflict: 'id' })
   

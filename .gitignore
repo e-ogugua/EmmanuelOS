@@ -27,3 +27,6 @@ build
 # Nx
 tmp
 coverage
+
+# Local Netlify folder
+.netlify

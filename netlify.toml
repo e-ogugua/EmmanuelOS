@@ -1,11 +1,10 @@
 [build]
-  base = "apps/zereth-foods"
-  command = "npm run build"
-  publish = ".next"
+  command = "npm ci --legacy-peer-deps && npm run build -w apps/zereth-foods"
+  publish = "apps/zereth-foods/.next"
 
 [build.environment]
   NODE_VERSION = "20.11.1"
-  NPM_FLAGS = "--legacy-peer-deps"
+  NEXT_TELEMETRY_DISABLED = "1"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"

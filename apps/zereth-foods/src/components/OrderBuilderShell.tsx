@@ -19,7 +19,7 @@ export default function OrderBuilderShell({ cakes }: { cakes: Cake[] }) {
           ))}
         </select>
       </div>
-      <CakeBuilder basePrice={selected.base_price} cakeId={typeof selected.id === 'number' ? selected.id : undefined} />
+      <CakeBuilder basePrice={selected.base_price} cakeId={selected.id} />
     </div>
   );
 }

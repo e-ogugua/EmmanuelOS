@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export type Cake = {
-  id: string | number;
+  id: string;
   name: string;
   slug: string;
   category?: string;

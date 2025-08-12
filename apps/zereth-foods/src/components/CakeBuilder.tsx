@@ -5,7 +5,7 @@ import { calcPrice, type BuilderState } from "@/lib/pricing";
 
 export type BuilderProps = {
   basePrice: number;
-  cakeId?: string | number;
+  cakeId?: string; // Supabase uuid
   defaultFlavor?: string;
 };
 
@@ -47,13 +47,18 @@ export default function CakeBuilder({ basePrice, cakeId, defaultFlavor = "vanill
         uploadedUrl = upJson.url as string | undefined;
       }
 
+      if (!cakeId) {
+        alert("Please select a cake before placing an order.")
+        return
+      }
+
       const res = await fetch("/api/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           customer: { name: customerName, phone: customerPhone, email: customerEmail },
           items: [{
-            cake_id: typeof cakeId === 'number' ? cakeId : 1,
+            cake_id: cakeId,
             custom_size: size,
             flavor,
             icing_style: icing,

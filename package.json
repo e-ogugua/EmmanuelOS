@@ -5,6 +5,9 @@
   "author": "Emmanuel Ogugua <emmachuka@gmail.com>",
   "license": "MIT",
   "private": true,
+  "engines": {
+    "node": "22.x"
+  },
   "workspaces": [
     "apps/*",
     "libs/*"

@@ -43,7 +43,7 @@ export const demoCakes: DemoCake[] = [
     category: "Kids",
     base_price: 20000,
     description: "Fresh strawberries and vanilla cream.",
-    image_url: "https://res.cloudinary.com/dkwtjorcp/image/fetch/c_fill,w_1200,h_900,q_auto,f_auto/https%3A%2F%2Fimages.pexels.com%2Fphotos%2F1983056%2Fpexels-photo-1983056.jpeg",
+    image_url: "https://res.cloudinary.com/dkwtjorcp/image/fetch/c_fill,w_1200,h_900,q_auto,f_auto/https%3A%2F%2Fimages.pexels.com%2Fphotos%2F291528%2Fpexels-photo-291528.jpeg",
   },
   {
     id: "7b7c8a3e-5d1c-4d86-91f7-0a2b0d11a005",
@@ -52,7 +52,7 @@ export const demoCakes: DemoCake[] = [
     category: "Seasonal",
     base_price: 19000,
     description: "Tangy lemon sponge with citrus glaze.",
-    image_url: "https://res.cloudinary.com/dkwtjorcp/image/fetch/c_fill,w_1200,h_900,q_auto,f_auto/https%3A%2F%2Fimages.pexels.com%2Fphotos%2F45202%2Fcupcakes-dessert-cake-sweet-45202.jpeg",
+    image_url: "https://res.cloudinary.com/dkwtjorcp/image/fetch/c_fill,w_1200,h_900,q_auto,f_auto/https%3A%2F%2Fimages.pexels.com%2Fphotos%2F291528%2Fpexels-photo-291528.jpeg",
   },
   {
     id: "7b7c8a3e-5d1c-4d86-91f7-0a2b0d11a006",
@@ -61,7 +61,7 @@ export const demoCakes: DemoCake[] = [
     category: "Wedding",
     base_price: 28000,
     description: "Coconut cream with toasted flakes.",
-    image_url: "https://res.cloudinary.com/dkwtjorcp/image/fetch/c_fill,w_1200,h_900,q_auto,f_auto/https%3A%2F%2Fimages.pexels.com%2Fphotos%2F411000%2Fpexels-photo-411000.jpeg",
+    image_url: "https://res.cloudinary.com/dkwtjorcp/image/fetch/c_fill,w_1200,h_900,q_auto,f_auto/https%3A%2F%2Fimages.pexels.com%2Fphotos%2F291528%2Fpexels-photo-291528.jpeg",
   },
   {
     id: "7b7c8a3e-5d1c-4d86-91f7-0a2b0d11a007",

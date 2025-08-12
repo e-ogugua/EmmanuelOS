@@ -16,7 +16,7 @@ export const demoCakes: DemoCake[] = [
     category: "Birthday",
     base_price: 18000,
     description: "Classic vanilla sponge with silky buttercream.",
-    image_url: "https://picsum.photos/seed/vanilla-bliss/1200/900",
+    image_url: "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&dpr=1",
   },
   {
     id: "7b7c8a3e-5d1c-4d86-91f7-0a2b0d11a002",
@@ -25,7 +25,7 @@ export const demoCakes: DemoCake[] = [
     category: "Birthday",
     base_price: 22000,
     description: "Rich chocolate layers with dark ganache.",
-    image_url: "https://picsum.photos/seed/chocolate-royale/1200/900",
+    image_url: "https://images.pexels.com/photos/533325/pexels-photo-533325.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&dpr=1",
   },
   {
     id: "7b7c8a3e-5d1c-4d86-91f7-0a2b0d11a003",
@@ -34,7 +34,7 @@ export const demoCakes: DemoCake[] = [
     category: "Wedding",
     base_price: 30000,
     description: "Velvety crumb with cream cheese frosting.",
-    image_url: "https://picsum.photos/seed/red-velvet-dream/1200/900",
+    image_url: "https://images.pexels.com/photos/1998635/pexels-photo-1998635.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&dpr=1",
   },
   {
     id: "7b7c8a3e-5d1c-4d86-91f7-0a2b0d11a004",
@@ -43,7 +43,7 @@ export const demoCakes: DemoCake[] = [
     category: "Kids",
     base_price: 20000,
     description: "Fresh strawberries and vanilla cream.",
-    image_url: "https://picsum.photos/seed/strawberry-delight/1200/900",
+    image_url: "https://images.pexels.com/photos/1983056/pexels-photo-1983056.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&dpr=1",
   },
   {
     id: "7b7c8a3e-5d1c-4d86-91f7-0a2b0d11a005",
@@ -52,7 +52,7 @@ export const demoCakes: DemoCake[] = [
     category: "Seasonal",
     base_price: 19000,
     description: "Tangy lemon sponge with citrus glaze.",
-    image_url: "https://picsum.photos/seed/lemon-zest/1200/900",
+    image_url: "https://images.pexels.com/photos/45202/cupcakes-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&dpr=1",
   },
   {
     id: "7b7c8a3e-5d1c-4d86-91f7-0a2b0d11a006",
@@ -61,7 +61,7 @@ export const demoCakes: DemoCake[] = [
     category: "Wedding",
     base_price: 28000,
     description: "Coconut cream with toasted flakes.",
-    image_url: "https://picsum.photos/seed/coconut-paradise/1200/900",
+    image_url: "https://images.pexels.com/photos/411000/pexels-photo-411000.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&dpr=1",
   },
   {
     id: "7b7c8a3e-5d1c-4d86-91f7-0a2b0d11a007",
@@ -70,7 +70,7 @@ export const demoCakes: DemoCake[] = [
     category: "Birthday",
     base_price: 24000,
     description: "Butterscotch sponge with caramel drizzle.",
-    image_url: "https://picsum.photos/seed/caramel-crunch/1200/900",
+    image_url: "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&dpr=1",
   },
   {
     id: "7b7c8a3e-5d1c-4d86-91f7-0a2b0d11a008",
@@ -79,6 +79,6 @@ export const demoCakes: DemoCake[] = [
     category: "Kids",
     base_price: 17000,
     description: "Rainbow sprinkles in fluffy vanilla cake.",
-    image_url: "https://picsum.photos/seed/funfetti-party/1200/900",
+    image_url: "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&dpr=1",
   },
 ];

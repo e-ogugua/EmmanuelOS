@@ -7,6 +7,11 @@ export async function GET(req: Request) {
   const category = searchParams.get('category')
   const supabase = supabaseServer()
 
+  if (!supabase) {
+    const filtered = category ? demoCakes.filter(c=>c.category===category) : demoCakes
+    return NextResponse.json({ data: filtered })
+  }
+
   let query = supabase
     .from('cakes')
     .select('id,name,slug,category,base_price,image_url')

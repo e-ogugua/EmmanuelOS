@@ -10,9 +10,11 @@ export default {
     extend: {
       colors: {
         brand: {
-          primary: '#0F766E',
-          secondary: '#F59E0B',
-          accent: '#9333EA'
+          primary: '#0ea5a3',
+          secondary: '#f59e0b',
+          accent: '#7c3aed',
+          ink: '#0b132b',
+          soft: '#f8fafc'
         }
       }
     },

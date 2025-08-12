@@ -1,4 +1,4 @@
-import { supabaseServer } from '@/lib/supabase/server'
+import { getSupabaseServer } from '@/lib/supabase/server'
 import { postToSocialMedia } from '@/lib/social'
 import { NextResponse } from 'next/server'
 
@@ -13,8 +13,9 @@ export async function POST(request: Request) {
       )
     }
     
+    const supabase = getSupabaseServer()
     // Fetch the post details
-    const { data: post, error } = await supabaseServer
+    const { data: post, error } = await supabase
       .from('posts')
       .select('*')
       .eq('id', postId)

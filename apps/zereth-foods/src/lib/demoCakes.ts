@@ -16,7 +16,7 @@ export const demoCakes: DemoCake[] = [
     category: "Birthday",
     base_price: 18000,
     description: "Classic vanilla sponge with silky buttercream.",
-    image_url: "https://images.unsplash.com/photo-1541976076758-347942db1970",
+    image_url: "https://picsum.photos/seed/vanilla-bliss/1200/900",
   },
   {
     id: "7b7c8a3e-5d1c-4d86-91f7-0a2b0d11a002",
@@ -25,7 +25,7 @@ export const demoCakes: DemoCake[] = [
     category: "Birthday",
     base_price: 22000,
     description: "Rich chocolate layers with dark ganache.",
-    image_url: "https://images.unsplash.com/photo-1599785209796-d4e0db5e7f32",
+    image_url: "https://picsum.photos/seed/chocolate-royale/1200/900",
   },
   {
     id: "7b7c8a3e-5d1c-4d86-91f7-0a2b0d11a003",
@@ -34,7 +34,7 @@ export const demoCakes: DemoCake[] = [
     category: "Wedding",
     base_price: 30000,
     description: "Velvety crumb with cream cheese frosting.",
-    image_url: "https://images.unsplash.com/photo-1559622214-ae6b0b6f2d8b",
+    image_url: "https://picsum.photos/seed/red-velvet-dream/1200/900",
   },
   {
     id: "7b7c8a3e-5d1c-4d86-91f7-0a2b0d11a004",
@@ -43,7 +43,7 @@ export const demoCakes: DemoCake[] = [
     category: "Kids",
     base_price: 20000,
     description: "Fresh strawberries and vanilla cream.",
-    image_url: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c",
+    image_url: "https://picsum.photos/seed/strawberry-delight/1200/900",
   },
   {
     id: "7b7c8a3e-5d1c-4d86-91f7-0a2b0d11a005",
@@ -52,7 +52,7 @@ export const demoCakes: DemoCake[] = [
     category: "Seasonal",
     base_price: 19000,
     description: "Tangy lemon sponge with citrus glaze.",
-    image_url: "https://images.unsplash.com/photo-1587668178277-295251f900ce",
+    image_url: "https://picsum.photos/seed/lemon-zest/1200/900",
   },
   {
     id: "7b7c8a3e-5d1c-4d86-91f7-0a2b0d11a006",
@@ -61,7 +61,7 @@ export const demoCakes: DemoCake[] = [
     category: "Wedding",
     base_price: 28000,
     description: "Coconut cream with toasted flakes.",
-    image_url: "https://images.unsplash.com/photo-1541782814459-bb2af2f05b55",
+    image_url: "https://picsum.photos/seed/coconut-paradise/1200/900",
   },
   {
     id: "7b7c8a3e-5d1c-4d86-91f7-0a2b0d11a007",
@@ -70,7 +70,7 @@ export const demoCakes: DemoCake[] = [
     category: "Birthday",
     base_price: 24000,
     description: "Butterscotch sponge with caramel drizzle.",
-    image_url: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9a",
+    image_url: "https://picsum.photos/seed/caramel-crunch/1200/900",
   },
   {
     id: "7b7c8a3e-5d1c-4d86-91f7-0a2b0d11a008",
@@ -79,6 +79,6 @@ export const demoCakes: DemoCake[] = [
     category: "Kids",
     base_price: 17000,
     description: "Rainbow sprinkles in fluffy vanilla cake.",
-    image_url: "https://images.unsplash.com/photo-1488477181946-6428a0291777",
+    image_url: "https://picsum.photos/seed/funfetti-party/1200/900",
   },
 ];

@@ -36,10 +36,11 @@ export default async function HomePage() {
           <div className="aspect-[4/3] rounded-xl overflow-hidden shadow">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={hero?.image_url || "https://images.unsplash.com/photo-1541976076758-347942db1970"}
+              src={(hero?.image_url || "https://images.unsplash.com/photo-1541976076758-347942db1970") + ((hero?.image_url && hero.image_url.includes("?")) ? "" : "?auto=format&fit=crop&w=1400&q=80")}
               alt={hero?.name || "Featured cake"}
               className="h-full w-full object-cover"
               loading="eager"
+              onError={(e)=>{ (e.currentTarget as HTMLImageElement).src = "https://images.unsplash.com/photo-1541976076758-347942db1970?auto=format&fit=crop&w=1400&q=80"; }}
             />
           </div>
         </div>

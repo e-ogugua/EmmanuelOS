@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import dynamic from 'next/dynamic'
 import { supabase } from '@/lib/supabase/client'
 import { slugify, calculateReadTime } from '@/lib/utils'
+import toast from 'react-hot-toast'
 
 // Dynamically import the Markdown editor to avoid SSR issues
 const MDEditor = dynamic(
@@ -60,11 +61,15 @@ export default function PostEditor() {
 
       if (error) {
         setError(error.message)
+        toast.error(error.message)
       } else {
+        const action = status === 'published' ? 'Published' : 'Draft saved'
+        toast.success(action)
         router.push('/admin/dashboard')
       }
     } catch (err) {
       setError('An unexpected error occurred')
+      toast.error('An unexpected error occurred')
     } finally {
       setLoading(false)
     }

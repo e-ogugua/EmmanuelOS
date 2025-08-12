@@ -15,7 +15,7 @@ export function trackPageView(url: string, title?: string) {
   // }
 }
 
-export function trackEvent(eventName: string, properties?: Record<string, any>) {
+export function trackEvent(eventName: string, properties?: Record<string, string | number | boolean | null | undefined>) {
   // Log event to console for development
   console.log(`Event tracked: ${eventName}`, properties)
   

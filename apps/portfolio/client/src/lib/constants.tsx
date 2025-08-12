@@ -23,6 +23,14 @@ export const DEVELOPER_PROJECTS = [
     tags: ["Python", "Docker", "AWS"],
     action: "System Design",
   },
+  {
+    id: "4",
+    title: "CEOWrites Blog",
+    description: "Modern, SEO-friendly personal blog platform built with Next.js, TypeScript, and Supabase",
+    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
+    tags: ["Next.js", "TypeScript", "Supabase"],
+    action: "View Blog",
+  },
 ];
 
 export const BUSINESS_PROJECTS = [

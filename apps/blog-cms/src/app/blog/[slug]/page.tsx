@@ -6,11 +6,12 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
   const { data: post } = await supabaseServer
     .from('posts')
     .select('*')
-    .eq('slug', params.slug)
+    .eq('slug', resolvedParams.slug)
     .single()
 
   const metadata = generateBlogMetadata(post || undefined)
@@ -22,11 +23,15 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
   const { data: post, error } = await supabaseServer
     .from('posts')
-    .select('*')
-    .eq('slug', params.slug)
+    .select(`
+      *,
+      author:profiles(*)
+    `)
+    .eq('slug', resolvedParams.slug)
     .single()
 
   if (error || !post) {

@@ -1,0 +1,29 @@
+# Node
+node_modules
+*.log
+
+# Next.js
+.next
+apps/**/.next
+
+# Vite
+dist
+
+# OS
+.DS_Store
+
+# Env
+.env
+.env.*
+
+# Build
+build
+
+# Misc
+*.zip
+*.tar.gz
+*.tgz
+
+# Nx
+tmp
+coverage

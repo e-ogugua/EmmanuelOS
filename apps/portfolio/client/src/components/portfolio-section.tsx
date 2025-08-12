@@ -118,6 +118,15 @@ export function PortfolioSection({ selectedPersona }: PortfolioSectionProps) {
                         ? "bg-matrix text-black font-mono hover:bg-matrix/80"
                         : "bg-ceo-gold text-white font-serif hover:bg-ceo-gold/80"
                     }`}
+                    onClick={() => {
+                      if (project.id === "4") {
+                        // Open CEOWrites blog in new tab
+                        window.open("https://ceowrites.dev", "_blank");
+                      } else {
+                        // For other projects, we could implement different actions
+                        console.log(`Action for project ${project.id}`);
+                      }
+                    }}
                   >
                     {project.action}
                   </Button>

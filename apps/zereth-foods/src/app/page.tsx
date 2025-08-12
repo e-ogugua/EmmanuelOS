@@ -16,6 +16,7 @@ async function fetchCakes() {
 export default async function HomePage() {
   const cakes = await fetchCakes();
   const featured = cakes.slice(0, 6);
+  const hero = featured[0] || demoCakes[0];
   return (
     <main>
       <section className="bg-cream">
@@ -32,7 +33,15 @@ export default async function HomePage() {
               <a href="/gallery" className="px-6 py-3 rounded-xl border border-chocolate text-chocolate hover:bg-white">See gallery</a>
             </div>
           </div>
-          <div className="aspect-[4/3] bg-white rounded-xl shadow-inner" />
+          <div className="aspect-[4/3] rounded-xl overflow-hidden shadow">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={hero?.image_url || "https://images.unsplash.com/photo-1541976076758-347942db1970"}
+              alt={hero?.name || "Featured cake"}
+              className="h-full w-full object-cover"
+              loading="eager"
+            />
+          </div>
         </div>
       </section>
 

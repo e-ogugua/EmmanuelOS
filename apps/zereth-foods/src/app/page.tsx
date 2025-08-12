@@ -40,7 +40,6 @@ export default async function HomePage() {
               alt={hero?.name || "Featured cake"}
               className="h-full w-full object-cover"
               loading="eager"
-              onError={(e)=>{ (e.currentTarget as HTMLImageElement).src = "https://images.unsplash.com/photo-1541976076758-347942db1970?auto=format&fit=crop&w=1400&q=80"; }}
             />
           </div>
         </div>

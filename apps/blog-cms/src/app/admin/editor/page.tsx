@@ -3,15 +3,24 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import dynamic from 'next/dynamic'
+import type { ComponentType } from 'react'
 import { supabase } from '@/lib/supabase/client'
 import { slugify, calculateReadTime } from '@/lib/utils'
 import toast from 'react-hot-toast'
 
-// Dynamically import the Markdown editor to avoid SSR issues
-const MDEditor = dynamic(
-  () => import('@uiw/react-md-editor').then((mod) => mod.default),
-  { ssr: false }
-)
+// Dynamically import the Markdown editor with explicit props typing
+type MarkdownEditorProps = {
+  value?: string
+  onChange?: (value?: string) => void
+  height?: number
+  className?: string
+  preview?: 'edit' | 'live' | 'preview'
+  visibleDragbar?: boolean
+}
+
+const MDEditor = dynamic(() =>
+  import('@uiw/react-md-editor').then((mod) => mod.default as unknown as ComponentType<MarkdownEditorProps>)
+, { ssr: false })
 
 export default function PostEditor() {
   const [title, setTitle] = useState('')

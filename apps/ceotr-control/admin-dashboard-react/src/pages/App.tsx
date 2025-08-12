@@ -29,7 +29,10 @@ export function App() {
     <div className="min-h-screen bg-slate-50">
       <header className="bg-white border-b">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="font-semibold text-brand-blue">CEOTR Control Center</h1>
+          <a href="/" className="flex items-center gap-3">
+            <img src="/logo.svg" alt="CEOTR Ltd" className="h-8 w-auto" />
+            <span className="font-semibold text-brand-blue">CEOTR Control Center</span>
+          </a>
           <button className="text-sm" onClick={()=>supabase.auth.signOut()}>Sign out</button>
         </div>
       </header>

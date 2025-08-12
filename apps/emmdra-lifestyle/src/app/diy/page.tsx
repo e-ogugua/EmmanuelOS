@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { tutorials } from '@/data/sample'
 
 export const dynamic = 'force-static'
@@ -17,6 +18,12 @@ export default function DIYPage() {
             <div className="p-3">
               <div className="font-medium">{t.title}</div>
               <div className="text-sm text-gray-600">Difficulty: {t.difficulty}</div>
+              <Link
+                href={{ pathname: '/contact', query: { topic: 'tutorial', ref: t.id } }}
+                className="inline-block mt-2 px-3 py-1.5 text-sm bg-emerald-600 hover:bg-emerald-700 text-white rounded"
+              >
+                Try this tutorial
+              </Link>
             </div>
           </div>
         ))}

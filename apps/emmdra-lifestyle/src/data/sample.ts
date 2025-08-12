@@ -3,7 +3,7 @@ export type BlogPost = { id: string; title: string; category: 'Family Life'|'Bea
 export type Tutorial = { id: string; title: string; difficulty: 'Easy'|'Medium'|'Hard'; image: string };
 export type Course = { id: string; title: string; price: number; duration: string; image: string };
 
-const img = (seed: string, w=1200, h=900) => `https://res.cloudinary.com/demo/image/upload/c_fill,w_${w},h_${h},q_auto,f_auto/${seed}.jpg`;
+const img = (seed: string, w=1200, h=900) => `https://picsum.photos/seed/${encodeURIComponent(seed)}/${w}/${h}`;
 
 export const products: Product[] = [
   { id: 'p1', title: 'Ankara Wrap Dress', price: 15000, category: 'Fashion', image: img('fashion') },
@@ -19,11 +19,11 @@ export const products: Product[] = [
 ];
 
 export const posts: BlogPost[] = [
-  { id: 'b1', title: 'How We Built a Family Business in Lagos', category: 'Family Life', image: img('family1') },
-  { id: 'b2', title: 'Top 5 Natural Oils for Glowing Skin', category: 'Beauty', image: img('beauty4') },
-  { id: 'b3', title: 'Turning Passion into Profit: Our Branding Journey', category: 'Business', image: img('business1') },
-  { id: 'b4', title: 'The Future of African Fashion Trends', category: 'Lifestyle', image: img('fashion5') },
-  { id: 'b5', title: 'Balancing Marriage, Parenting, and Entrepreneurship', category: 'Family Life', image: img('family2') },
+  { id: 'b1', title: 'How We Built a Family Business in Lagos', category: 'Family Life', image: img('family-business-lagos') },
+  { id: 'b2', title: 'Top 5 Natural Oils for Glowing Skin', category: 'Beauty', image: img('natural-oils-glow') },
+  { id: 'b3', title: 'Turning Passion into Profit: Our Branding Journey', category: 'Business', image: img('branding-journey') },
+  { id: 'b4', title: 'The Future of African Fashion Trends', category: 'Lifestyle', image: img('african-fashion-future') },
+  { id: 'b5', title: 'Balancing Marriage, Parenting, and Entrepreneurship', category: 'Family Life', image: img('family-balance') },
 ];
 
 export const tutorials: Tutorial[] = [

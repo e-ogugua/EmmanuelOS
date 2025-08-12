@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { courses } from '@/data/sample'
 
 export const dynamic = 'force-static'
@@ -18,6 +19,12 @@ export default function LearnPage() {
               <div className="font-medium">{c.title}</div>
               <div className="text-emerald-700 font-semibold">₦{c.price.toLocaleString('en-NG')}</div>
               <div className="text-sm text-gray-600">Duration: {c.duration}</div>
+              <Link
+                href={{ pathname: '/contact', query: { topic: 'course', ref: c.id } }}
+                className="inline-block mt-2 px-3 py-1.5 text-sm bg-emerald-600 hover:bg-emerald-700 text-white rounded"
+              >
+                Enroll interest
+              </Link>
             </div>
           </div>
         ))}

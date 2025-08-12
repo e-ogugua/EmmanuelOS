@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { clsx } from 'clsx'
 
 export type ProductCardProps = {
@@ -12,12 +13,16 @@ export type ProductCardProps = {
 export default function ProductCard({ id, title, price, image, className }: ProductCardProps) {
   return (
     <div className={clsx('border rounded-lg overflow-hidden bg-white', className)}>
-      <div className="relative aspect-[4/3]">
-        <Image src={image} alt={title} fill className="object-cover" />
-      </div>
-      <div className="p-3">
-        <div className="font-medium">{title}</div>
-        <div className="text-emerald-700 font-semibold">₦{price.toLocaleString('en-NG')}</div>
+      <Link href={`/product/${id}`} aria-label={`View ${title}`} className="block">
+        <div className="relative aspect-[4/3]">
+          <Image src={image} alt={title} fill className="object-cover" />
+        </div>
+        <div className="p-3">
+          <div className="font-medium">{title}</div>
+          <div className="text-emerald-700 font-semibold">₦{price.toLocaleString('en-NG')}</div>
+        </div>
+      </Link>
+      <div className="px-3 pb-3">
         <button
           className="snipcart-add-item mt-2 w-full px-3 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded"
           data-item-id={id}

@@ -7,7 +7,8 @@ const nextConfig = {
     domains: [
       'res.cloudinary.com',
       'images.pexels.com',
-      'images.unsplash.com'
+      'images.unsplash.com',
+      'picsum.photos'
     ],
   },
   webpack: (config) => {

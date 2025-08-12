@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import '../styles/global.css'
+---
+<BaseLayout title="CEOTR Ltd — Smart Business. Solid Execution.">
+  <section class="section bg-gradient-to-b from-white to-slate-50">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h1 class="font-serif text-4xl md:text-5xl text-brand-blue leading-tight">Smart Business. <span class="text-brand-gold">Solid Execution.</span></h1>
+        <p class="mt-4 section-sub">General contracting and business development — from planning to delivery, we help you build and grow with confidence.</p>
+        <div class="mt-8 flex gap-4">
+          <a href="/services" class="btn-primary">Explore Services</a>
+          <a href="/contact" class="rounded-2xl border border-slate-300 px-5 py-3 hover:bg-slate-50">Contact Us</a>
+        </div>
+      </div>
+      <div class="card p-6">
+        <p class="text-slate-600">Feature your latest projects or a corporate image here.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-sub">Construction, technology, and consulting — tailored to your business objectives.</p>
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {['Construction','Technology','Consulting'].map((s) => (
+          <div class="card p-6" role="article">
+            <h3 class="font-semibold text-brand-blue">{s}</h3>
+            <p class="text-slate-600 mt-2">High-quality delivery with accountable execution.</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --brand-blue:#0b1f3a;
+  --brand-silver:#c0c0c0;
+  --brand-gold:#d4af37;
+}
+
+.btn-primary{ @apply rounded-2xl bg-brand-blue text-white px-5 py-3 shadow hover:bg-slate-900 transition; }
+.section{ @apply py-16 md:py-24; }
+.section-title{ @apply font-serif text-3xl md:text-4xl text-brand-blue mb-6; }
+.section-sub{ @apply text-slate-600 max-w-2xl; }
+.card{ @apply rounded-2xl border border-slate-200 shadow-sm bg-white; }

@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --brand-blue:#0b1f3a;
+  --brand-silver:#c0c0c0;
+  --brand-gold:#d4af37;
+}
+
+.btn-primary{ @apply rounded-2xl bg-brand-blue text-white px-4 py-2 shadow hover:bg-slate-900 transition; }
+.card{ @apply rounded-2xl border border-slate-200 shadow-sm bg-white; }

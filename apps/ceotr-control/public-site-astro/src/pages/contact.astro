@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import '../styles/global.css'
+---
+<BaseLayout title="Contact — CEOTR Ltd">
+  <section class="section">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="section-title">Contact Us</h1>
+      <form name="contact" method="POST" data-netlify="true" class="card p-6 grid gap-4">
+        <input type="hidden" name="form-name" value="contact" />
+        <label class="grid gap-2">
+          <span class="text-sm">Name</span>
+          <input class="border rounded-2xl px-3 py-2" name="name" required />
+        </label>
+        <label class="grid gap-2">
+          <span class="text-sm">Email</span>
+          <input class="border rounded-2xl px-3 py-2" type="email" name="email" required />
+        </label>
+        <label class="grid gap-2">
+          <span class="text-sm">Message</span>
+          <textarea class="border rounded-2xl px-3 py-2" name="message" rows="5" required />
+        </label>
+        <button class="btn-primary" type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+</BaseLayout>

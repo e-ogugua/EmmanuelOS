@@ -1,10 +1,16 @@
 import CakeCard, { type Cake } from "@/components/CakeCard";
+import { demoCakes } from "@/lib/demoCakes";
 
 async function fetchCakes(category?: string): Promise<Cake[]> {
   const url = category ? `/api/cakes?category=${encodeURIComponent(category)}` : "/api/cakes";
-  const res = await fetch(url, { cache: "no-store" });
-  const json = await res.json();
-  return json.data as Cake[];
+  try {
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) return (category ? demoCakes.filter(c=>c.category===category) : demoCakes) as any;
+    const json = await res.json();
+    return (json.data as Cake[]) || ((category ? demoCakes.filter(c=>c.category===category) : demoCakes) as any);
+  } catch {
+    return (category ? demoCakes.filter(c=>c.category===category) : demoCakes) as any;
+  }
 }
 
 export default async function GalleryPage({ searchParams }: { searchParams?: { category?: string } }) {

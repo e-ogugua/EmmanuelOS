@@ -1,9 +1,16 @@
 import CakeCard from "@/components/CakeCard";
+import { demoCakes } from "@/lib/demoCakes";
 
 async function fetchCakes() {
-  const res = await fetch("/api/cakes", { cache: "no-store" });
-  const json = await res.json();
-  return json.data as Array<{ id: string; name: string; slug: string; base_price: number; image_url?: string; category?: string }>;
+  try {
+    const base = process.env.NEXT_PUBLIC_BASE_URL || "";
+    const res = await fetch(`${base}/api/cakes`, { cache: "no-store" });
+    if (!res.ok) return demoCakes as any;
+    const json = await res.json();
+    return (json.data as Array<{ id: string; name: string; slug: string; base_price: number; image_url?: string; category?: string }>) || demoCakes;
+  } catch {
+    return demoCakes as any;
+  }
 }
 
 export default async function HomePage() {
@@ -36,7 +43,7 @@ export default async function HomePage() {
             <a href="/gallery" className="text-chocolate hover:underline text-sm">View all →</a>
           </div>
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featured.map((c)=> (
+            {featured.map((c: { id: string; name: string; slug: string; base_price: number; image_url?: string; category?: string })=> (
               <CakeCard key={c.slug} cake={c as any} />
             ))}
           </div>

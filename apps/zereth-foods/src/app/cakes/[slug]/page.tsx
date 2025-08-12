@@ -1,10 +1,12 @@
 import CakeBuilder from "@/components/CakeBuilder";
 
+type CakeDetail = { id: string; name: string; slug: string; base_price: number; description?: string; image_url?: string }
+
 async function fetchCake(slug: string) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || ''}/api/cakes/${slug}`, { cache: 'no-store' });
   if (!res.ok) throw new Error('Failed to load cake');
   const json = await res.json();
-  return json.data as { id?: string|number; name: string; slug: string; base_price: number; description?: string; image_url?: string };
+  return json.data as CakeDetail;
 }
 
 export default async function CakeDetailsPage({ params }: { params: { slug: string } }) {

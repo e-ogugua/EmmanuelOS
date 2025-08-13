@@ -3,10 +3,8 @@
   "builds": [
     {
       "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": ".svelte-kit/output/static"
-      }
+      "use": "@sveltejs/vercel",
+      "config": {}
     }
   ],
   "routes": [

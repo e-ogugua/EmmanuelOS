@@ -1,5 +1,4 @@
 <script lang="ts">
-  export let data;
 </script>
 
 <section class="max-w-5xl mx-auto p-6">

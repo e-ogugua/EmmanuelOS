@@ -1,3 +1,4 @@
 [build]
-command = "npm run build"
-publish = ".svelte-kit/netlify"
+# Force building from this app's directory even if Netlify runs from repo root
+command = "npm --prefix ./apps/poshpoule/public-site run build"
+publish = "apps/poshpoule/public-site/.svelte-kit/netlify"

@@ -1,4 +1,4 @@
 [build]
-# Force building from this app's directory even if Netlify runs from repo root
-command = "npm --prefix ./apps/poshpoule/buyer-app run build"
+# Run the app's build via npm workspaces from repo root
+command = "npm run build -w @poshpoule/buyer-app"
 publish = "apps/poshpoule/buyer-app/.svelte-kit/netlify"

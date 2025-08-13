@@ -1,20 +1,14 @@
-import adapter from '@sveltejs/adapter-netlify';
+import adapter from '@sveltejs/adapter-vercel';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   kit: {
     adapter: adapter({
-      edge: true, // Enable edge functions
-      split: false // Handle all routes with a single function
-    }),
-    // Explicitly set the build directory
-    outDir: '.svelte-kit',
-    // Ensure Vite outputs to the expected directory
-    vite: {
-      build: {
-        outDir: '.netlify'
-      }
-    }
+      // Use edge functions if needed (disabled for now)
+      edge: false,
+      // Split mode for better performance
+      split: false
+    })
   }
 };
 

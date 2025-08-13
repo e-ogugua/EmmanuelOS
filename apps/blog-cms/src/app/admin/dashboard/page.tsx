@@ -6,25 +6,54 @@ import { supabase } from '@/lib/supabase/client'
 import type { User } from '@supabase/supabase-js'
 import { Post } from '@/lib/supabase/types'
 
+// Prevent static generation
+// This ensures the page is always rendered on the server at request time
+export const dynamic = 'force-dynamic'
+
 export default function AdminDashboard() {
   const [posts, setPosts] = useState<Post[]>([])
   const [loading, setLoading] = useState(true)
   const [user, setUser] = useState<User | null>(null)
+  const [error, setError] = useState<string | null>(null)
   const router = useRouter()
 
+  // Check if Supabase is configured
+  const isSupabaseConfigured = process.env.NEXT_PUBLIC_SUPABASE_URL && 
+                             process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+
   useEffect(() => {
+    if (!isSupabaseConfigured) {
+      setError('Admin dashboard is not configured. Missing Supabase credentials.')
+      setLoading(false)
+      return
+    }
+
     const checkUser = async () => {
-      const { data: { user } } = await supabase.auth.getUser()
-      if (!user) {
-        router.push('/admin')
-      } else {
+      try {
+        const { data: { user }, error } = await supabase.auth.getUser()
+        
+        if (error) {
+          console.error('Error fetching user:', error)
+          router.push('/admin')
+          return
+        }
+        
+        if (!user) {
+          router.push('/admin')
+          return
+        }
+        
         setUser(user)
         fetchPosts()
+      } catch (error) {
+        console.error('Error in checkUser:', error)
+        setError('Failed to authenticate. Please check your Supabase configuration.')
+        setLoading(false)
       }
     }
 
     checkUser()
-  }, [router])
+  }, [router, isSupabaseConfigured])
 
   const fetchPosts = async () => {
     setLoading(true)
@@ -53,6 +82,47 @@ export default function AdminDashboard() {
 
   const handleCreatePost = () => {
     router.push('/admin/editor')
+  }
+
+  if (!isSupabaseConfigured) {
+    return (
+      <div className="min-h-screen flex items-center justify-center p-4">
+        <div className="max-w-md w-full p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+          <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Admin Dashboard</h2>
+          <div className="text-red-500 mb-4">
+            Admin dashboard is not configured. Missing Supabase credentials.
+          </div>
+          <p className="text-gray-600 dark:text-gray-300 mb-4">
+            To enable the admin dashboard, please set up the following environment variables:
+          </p>
+          <ul className="list-disc list-inside mb-4 text-gray-600 dark:text-gray-300">
+            <li>NEXT_PUBLIC_SUPABASE_URL</li>
+            <li>NEXT_PUBLIC_SUPABASE_ANON_KEY</li>
+            <li>SUPABASE_SERVICE_ROLE_KEY</li>
+          </ul>
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            The rest of your site will continue to work normally.
+          </p>
+        </div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center p-4">
+        <div className="max-w-md w-full p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+          <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Admin Dashboard</h2>
+          <div className="text-red-500 mb-4">{error}</div>
+          <button
+            onClick={() => router.push('/')}
+            className="w-full bg-matrix text-white py-2 px-4 rounded hover:bg-matrix/80 transition"
+          >
+            Back to Home
+          </button>
+        </div>
+      </div>
+    )
   }
 
   if (loading) {

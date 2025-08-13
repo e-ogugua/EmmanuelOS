@@ -16,6 +16,8 @@
   "scripts": {
     "dev": "nx run-many --target=dev --all",
     "build": "nx run-many --target=build --all",
+    "build:poshpoule-buyer": "cd apps/poshpoule/buyer-app && npm install && npm run build",
+    "build:poshpoule-public": "cd apps/poshpoule/public-site && npm install && npm run build",
     "test": "nx run-many --target=test --all",
     "lint": "nx run-many --target=lint --all",
     "serve": "nx serve",

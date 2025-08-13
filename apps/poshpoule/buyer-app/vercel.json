@@ -2,9 +2,11 @@
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
-      "use": "@sveltejs/vercel",
-      "config": {}
+      "src": "vercel-build.js",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": ".svelte-kit/output/static"
+      }
     }
   ],
   "routes": [

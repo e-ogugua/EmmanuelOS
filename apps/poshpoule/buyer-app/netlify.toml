@@ -1,5 +1,5 @@
 [build]
 # Install and build only this app from monorepo
 base = "apps/poshpoule/buyer-app"
-command = "npm run build"
-publish = ".svelte-kit/netlify"
+command = "npm exec svelte-kit sync && npm exec svelte-kit build"
+publish = ".netlify"

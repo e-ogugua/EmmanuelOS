@@ -1,4 +1,5 @@
 [build]
-# Run the app's build via npm workspaces from repo root
-command = "npm run build -w @poshpoule/buyer-app"
-publish = "apps/poshpoule/buyer-app/.svelte-kit/netlify"
+# Install and build only this app from monorepo
+base = "apps/poshpoule/buyer-app"
+command = "npm run build"
+publish = ".svelte-kit/netlify"

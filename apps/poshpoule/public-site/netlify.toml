@@ -1,4 +1,4 @@
 [build]
-# Run the app's build via npm workspaces from repo root
-command = "npm run --workspace @poshpoule/public-site build"
-publish = "apps/poshpoule/public-site/.svelte-kit/netlify"
+base = "apps/poshpoule/public-site"
+command = "npm run build"
+publish = ".svelte-kit/netlify"

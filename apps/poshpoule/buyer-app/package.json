@@ -10,7 +10,7 @@
     "test": "vitest"
   },
   "devDependencies": {
-    "@sveltejs/adapter-vercel": "^4.1.1",
+    "@sveltejs/adapter-vercel": "^3.0.0",
     "@sveltejs/kit": "^2.5.18",
     "@sveltejs/vite-plugin-svelte": "^3.1.2",
     "autoprefixer": "^10.4.19",
